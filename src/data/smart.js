@@ -53,7 +53,7 @@ export const axes = [
     name: 'Smart Parking',
     icon: 'ParkingCircle',
     pitch: "Réserver une place dans un parking partenaire, directement dans l'app EasyPark.",
-    scope: 'Sans capteur, sans place numérotée : la disponibilité vient des exploitants.',
+    scope: "L'app réserve automatiquement 15 min avant l'arrivée ; les places libres du parking se mettent à jour aussitôt.",
   },
   {
     id: 'sharing',
@@ -129,9 +129,16 @@ export const donneesTravail = [
 ]
 
 export const hypothesesDepart = [
-  { axe: 'Smart Parking', text: "Réservation d'une place dans un parking partenaire, sans capteur, sans place numérotée ni guidage ; disponibilité fournie par l'exploitant.", status: 'Périmètre imposé' },
+  { axe: 'Smart Parking', text: "Réservation en fonction du nombre de places libres du parking partenaire. L'app réserve automatiquement 15 min avant l'arrivée du client ; le nombre de places libres diminue aussitôt dans le système du parking.", status: 'Principe de fonctionnement' },
   { axe: 'Smart Sharing', text: 'Commission de 15 % sur les locations.', status: 'H, testée à l’étape 10' },
   { axe: 'Smart Mobility', text: '0,50 € par trajet réalisé ; abonnement professionnel de 300 € par mois.', status: 'H, testées à l’étape 10' },
+]
+
+// Smart Parking : principe de la réservation, tel que défini par l'équipe projet.
+export const reservationFlow = [
+  { n: 1, title: 'Le client se rend à sa destination', text: "Il utilise l'application EasyPark pendant son trajet." },
+  { n: 2, title: 'Réservation automatique 15 min avant l’arrivée', text: "L'app réserve une place dans un parking partenaire qui a des places libres." },
+  { n: 3, title: 'Mise à jour immédiate du parking', text: 'Le nombre de places libres diminue automatiquement dans le système du parking.' },
 ]
 
 export const etapes = [
@@ -222,7 +229,7 @@ export const pestel = [
   { dim: 'Économique', fact: 'Yespark a racheté Zenpark en 2025 ; Onepark a levé 40 M€ auprès de TotalEnergies (CA 2024 : 30 M€).', effect: 'La réservation et le partage de places se consolident autour d’acteurs financés.', axe: 'Parking, Sharing', sens: 'Menace', src: S.onepark },
   { dim: 'Social', fact: '68,9 % des actifs vont travailler principalement en voiture en 2023 (19,3 millions) ; 15,6 % en transports en commun.', effect: 'Un très grand marché de trajets domicile-travail, encore peu partagé.', axe: 'Mobility, Parking', sens: 'Opportunité', src: S.modesData },
   { dim: 'Social', fact: "Le covoiturage du quotidien pèse environ 3 % des trajets ; celui qui passe par une plateforme n'en représente que 4 %.", effect: '96 % du covoiturage se fait sans plateforme : il est difficile à monétiser.', axe: 'Mobility', sens: 'Menace', src: S.covoitData },
-  { dim: 'Technologique', fact: 'La lecture de plaque permet d’entrer et sortir d’un parking sans ticket (CameraPark chez Saemes).', effect: 'Une réservation sans capteur devient fluide à l’arrivée.', axe: 'Parking', sens: 'Opportunité', src: S.saemes },
+  { dim: 'Technologique', fact: 'La lecture de plaque permet d’entrer et sortir d’un parking sans ticket (CameraPark chez Saemes).', effect: 'L’arrivée dans un parking réservé devient fluide, sans ticket.', axe: 'Parking', sens: 'Opportunité', src: S.saemes },
   { dim: 'Technologique', fact: 'Paiement et données de stationnement s’intègrent aux véhicules ; le groupe a racheté Parkopedia.', effect: 'Le tableau de bord de la voiture devient un canal de vente à côté de l’app.', axe: 'Parking', sens: 'Opportunité', src: S.parkopedia },
   { dim: 'Environnemental', fact: 'Les transports sont le 1er secteur émetteur : 123 Mt CO2 éq en 2025, 34 % des émissions.', effect: 'La pression sur la voiture individuelle va durer ; partage et covoiturage vont dans le sens public.', axe: 'Sharing, Mobility', sens: 'Opportunité', src: S.sdesGes },
   { dim: 'Environnemental', fact: 'Paris module depuis le 1er octobre 2024 le tarif de stationnement selon le poids du véhicule.', effect: 'La voirie se renchérit : une place réservée en parking devient plus attractive.', axe: 'Parking, Sharing', sens: 'Opportunité', src: S.paris },
@@ -342,7 +349,7 @@ export const enjeux = [
 ]
 
 export const lectureAxes = [
-  { axe: 'Smart Parking', priority: 1, verdict: 'Lancer en premier', diag: 'Clients déjà en voiture, voirie qui se renchérit ; périmètre sans capteur = investissement limité.', atout: 'Parkimeter, CameraPark, relations exploitants', risque: 'Disponibilités peu fiables ou exploitants qui préfèrent Onepark' },
+  { axe: 'Smart Parking', priority: 1, verdict: 'Lancer en premier', diag: 'Clients déjà en voiture, voirie qui se renchérit ; la réservation s’appuie sur le nombre de places libres que gère déjà chaque parking.', atout: 'Parkimeter, CameraPark, relations exploitants', risque: 'Systèmes de places libres non connectés, ou exploitants qui préfèrent Onepark' },
   { axe: 'Smart Sharing', priority: 2, verdict: 'Commencer par les entreprises, hôtels et gestionnaires', diag: 'Demande réelle (Yespark Group loue 100 000 places), mais un leader installé.', atout: 'Your Parking Space, savoir-faire au Royaume-Uni', risque: 'Trop peu de places par quartier pour intéresser les locataires' },
   { axe: 'Smart Mobility', priority: 3, verdict: 'Test ciblé avec un employeur ou une collectivité', diag: 'Grand besoin domicile-travail, mais marché subventionné, concentré et en recul en 2025.', atout: 'Billettique Flowbird, offre entreprises, lien avec les parkings relais', risque: 'Revenu par trajet trop faible sans financeur' },
 ]
@@ -367,7 +374,7 @@ export const donneesManquantes = [
   { n: 4, data: 'Contrats villes EasyPark et Flowbird : échéances, qui paie', why: 'Villes où lancer un pilote sans risque', how: 'Revue du portefeuille de contrats', who: 'Commercial villes, juridique', step: '9, 12' },
   { n: 5, data: 'Parkimeter en France : parkings, commission, volumes', why: 'Base de départ de Smart Parking', how: 'Note de Parkimeter à la direction', who: 'Parkimeter', step: '7, 8' },
   { n: 6, data: 'Your Parking Space : commission, délai de remplissage, coût d’acquisition', why: 'Repères pour Smart Sharing', how: 'Partage d’indicateurs dans le groupe', who: 'Your Parking Space (UK)', step: '8, 10' },
-  { n: 7, data: 'API de disponibilité des exploitants', why: 'Faisabilité de la réservation sans capteur', how: '10 entretiens exploitants, questionnaire technique', who: 'Exploitants partenaires', step: '7' },
+  { n: 7, data: 'API de places libres des exploitants (lecture et mise à jour)', why: 'Faisabilité de la réservation automatique et de la mise à jour des places libres', how: '10 entretiens exploitants, questionnaire technique', who: 'Exploitants partenaires', step: '7' },
   { n: 8, data: 'Intérêt des automobilistes pour réserver, louer, covoiturer', why: 'Taille du besoin et ordre des axes', how: 'Enquête dans l’app, 400 répondants minimum (±5 points)', who: 'Marketing', step: '4, 5' },
   { n: 9, data: 'Disposition des entreprises à payer 300 € par mois', why: "Validité de l'abonnement Smart Mobility", how: '20 entretiens parmi les 1 000 contacts du CRM', who: 'Commercial B2B', step: '4, 10' },
   { n: 10, data: 'Commissions de Onepark, Yespark et Zenpark', why: 'Prix de marché pour les 15 %', how: 'Entretiens propriétaires, conditions générales', who: 'Équipe projet', step: '2, 10' },

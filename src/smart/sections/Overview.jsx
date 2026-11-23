@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, ParkingCircle, Share2, Route, CheckCircle2, CircleDashed, AlertTriangle, Gavel } from 'lucide-react'
-import { axes, heroKpis, synthese, proofLegend, donneesTravail, hypothesesDepart, etapes, asOf } from '../../data/smart'
+import { axes, heroKpis, synthese, proofLegend, donneesTravail, hypothesesDepart, reservationFlow, etapes, asOf } from '../../data/smart'
 import { fmtNum, Section, Card, Reveal } from '../../components/ui/primitives'
 import { Proof, SrcLink } from '../ui'
 
@@ -172,6 +172,20 @@ export function Cadre() {
             <p className="mt-2 text-sm leading-relaxed text-slate-400">{h.text}</p>
             <div className="chip mt-3">{h.status}</div>
           </Card>
+        ))}
+      </div>
+
+      <h3 className="mb-4 mt-12 font-display text-xl font-semibold text-white">Smart Parking : comment la réservation fonctionne</h3>
+      <div className="grid gap-3 md:grid-cols-3">
+        {reservationFlow.map((s, i) => (
+          <Reveal key={s.n} delay={i * 0.08}>
+            <div className="relative h-full rounded-2xl border border-cyan-glow/20 bg-cyan-glow/[0.04] p-5">
+              <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-gradient font-display font-bold text-ink-900">{s.n}</span>
+              <div className="mt-3 font-semibold text-white">{s.title}</div>
+              <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{s.text}</p>
+              {i < reservationFlow.length - 1 && <ArrowRight className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-cyan-glow/60 md:block" />}
+            </div>
+          </Reveal>
         ))}
       </div>
 
