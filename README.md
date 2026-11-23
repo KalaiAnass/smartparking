@@ -1,4 +1,9 @@
-# Smart Parking AI — Investor Pitch App
+# Projet SMART — Étude stratégique EasyPark
+
+Site de l'étude stratégique du projet SMART (Smart Parking, Smart Sharing, Smart Mobility).
+Version actuelle : étape 1 sur 12, le diagnostic stratégique interne et externe.
+
+Projet académique, non officiel : il n'engage ni EasyPark ni Arrive et n'utilise aucune donnée interne.
 
 React 18 + Vite 5 + TailwindCSS 3 + Framer Motion + Recharts + Lucide.
 
@@ -12,17 +17,17 @@ npm run build    # build de production dans dist/ (publié par Netlify)
 
 ```
 src/
-├── data/project.js          # TOUTES les données du plan stratégique (source unique)
-├── components/
-│   ├── layout/              # Sidebar (nav sticky + progression), PhaseBlock (phases repliables)
-│   ├── ui/                  # Card, Section, Reveal, Counter animé, Tabs, ChartTooltip, Icon
-│   └── charts/              # QuadrantChart (mapping concurrentiel)
-└── sections/
-    ├── Hero.jsx · Vision.jsx
-    ├── phase1/  Diagnostic, Benchmark, MappingV1, USP, ZMOT, ConclusionV1, JourneyV1
-    ├── phase2/  Pivot, Engine, JourneyV2, MappingV2, MVP, ABTests, PitchDeck
-    ├── phase3/  Channels, PushPull, SEO, Campaigns, Gantt
-    └── phase4/  Budget, Monetization, CLV, ROI, BreakEven, Forecast
+├── App.jsx                  # aiguillage : étude SMART, ou archive avec ?version=pitch-v1
+├── data/
+│   ├── smart.js             # TOUTES les données de l'étude SMART (source unique)
+│   └── project.js           # données de l'archive « Smart Parking AI » (V1)
+├── smart/                   # site actuel
+│   ├── SmartApp.jsx · SmartSidebar.jsx · ui.jsx
+│   └── sections/  Overview (accueil, synthèse, cadre), Interne (profil, VRIO),
+│                  Externe (PESTEL, Porter), Conclusions (SWOT, axes, données, sources)
+├── ArchiveApp.jsx           # ancien pitch, conservé en archive
+├── components/              # composants partagés (layout, ui, charts)
+└── sections/                # sections de l'archive V1
 ```
 
-Pour modifier un chiffre ou un texte, éditez uniquement `src/data/project.js`.
+Pour modifier un chiffre ou un texte de l'étude, éditez uniquement `src/data/smart.js`.
