@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, ParkingCircle, Share2, Route, CheckCircle2, CircleDashed, AlertTriangle, Gavel } from 'lucide-react'
-import { axes, heroKpis, synthese, proofLegend, donneesTravail, hypothesesDepart, reservationFlow, etapes, asOf } from '../../data/smart'
-import { fmtNum, Section, Card, Reveal } from '../../components/ui/primitives'
-import { Proof, SrcLink } from '../ui'
+import { ArrowRight, ParkingCircle, Navigation, Share2, CheckCircle2, CircleDashed } from 'lucide-react'
+import { offres, heroKpis, synthese, proofLegend, parties, asOf } from '../../data/dossier'
+import { Section, Card, Reveal } from '../../components/ui/primitives'
+import { Proof, SrcLink, SubTitle } from '../ui'
 
-const axisIcons = { ParkingCircle, Share2, Route }
+const icons = { ParkingCircle, Navigation, Share2 }
 
 function Backdrop() {
   return (
@@ -23,44 +23,47 @@ export function Hero() {
       <Backdrop />
       <div className="relative z-10 max-w-5xl">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="chip mb-6 border-cyan-glow/30 text-cyan-glow">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-mint-glow" /> Étude stratégique · étape 1 sur 12 livrée
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-mint-glow" /> Dossier stratégique · étape 1 sur 10 livrée
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-5xl font-bold leading-[0.95] tracking-tight text-white sm:text-7xl"
+          className="font-display text-4xl font-bold leading-[1] tracking-tight text-white sm:text-6xl"
         >
-          Projet <span className="text-gradient">SMART</span>
+          EasyPark : <span className="text-gradient">Smart Parking</span> et <span className="text-gradient">Smart Sharing</span>
         </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} className="mt-5 font-display text-2xl font-medium text-slate-200 sm:text-3xl">
-          Stratégie de développement et d'innovation d'EasyPark
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} className="mt-5 font-display text-xl font-medium text-slate-200 sm:text-2xl">
+          Faire évoluer l'offre et le modèle économique d'EasyPark, sans nouvelle app ni nouvelle marque
         </motion.p>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-400">
-          Faire évoluer l'offre et l'application EasyPark autour de trois axes : réserver, partager, se déplacer. L'analyse est menée du point de vue de la direction d'EasyPark, sur le marché français.
+          Étape 1 : diagnostic d'EasyPark et audit de son application en France. Ce qui existe déjà, ce qui fonctionne, ce qui manque et ce qui peut être amélioré.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }} className="mt-8 flex flex-wrap gap-3">
           <a href="#synthese" className="group inline-flex items-center gap-2 rounded-full bg-brand-gradient px-6 py-3 font-semibold text-ink-900 shadow-glow transition hover:brightness-110">
             Lire la synthèse <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
           </a>
-          <a href="#profil" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition hover:border-cyan-glow/40 hover:bg-white/10">
-            Voir le diagnostic
+          <a href="#ecarts" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition hover:border-cyan-glow/40 hover:bg-white/10">
+            Ce qui existe, ce qui manque
           </a>
         </motion.div>
 
         <div className="mt-12 grid gap-3 sm:gap-4 md:grid-cols-3">
-          {axes.map((a, i) => {
-            const Ico = axisIcons[a.icon]
+          {offres.map((o, i) => {
+            const Ico = icons[o.icon]
             return (
-              <motion.div key={a.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.65 + i * 0.1 }} className="glass glass-hover p-5">
+              <motion.div key={o.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.65 + i * 0.1 }} className="glass glass-hover flex flex-col p-5">
                 <div className="flex items-center gap-3">
                   <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 ring-1 ring-white/10">
                     <Ico className="h-5 w-5 text-cyan-glow" />
                   </span>
-                  <span className="font-display text-lg font-semibold text-white">{a.name}</span>
+                  <span>
+                    <span className="block font-display text-lg font-semibold leading-tight text-white">{o.name}</span>
+                    <span className="block text-xs text-slate-400">{o.level}</span>
+                  </span>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">{a.pitch}</p>
-                <p className="mt-2 text-xs leading-relaxed text-slate-500">{a.scope}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-300">{o.text}</p>
+                <p className="mt-3 text-xs text-cyan-glow/90">{o.model}</p>
               </motion.div>
             )
           })}
@@ -70,10 +73,8 @@ export function Hero() {
           {heroKpis.map((k, i) => (
             <motion.div key={k.label} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.9 + i * 0.08 }} className="glass flex flex-col p-4 sm:p-5">
               <div className="flex items-start justify-between gap-2">
-                <div className="font-display text-2xl font-semibold text-white sm:text-3xl">
-                  {k.text ?? `${k.prefix ?? ''}${fmtNum(k.value, k.decimals ?? 0)}${k.suffix ?? ''}`}
-                </div>
-                <Proof code="F" />
+                <div className="font-display text-2xl font-semibold text-white sm:text-3xl">{k.value}</div>
+                <Proof code="V" />
               </div>
               <div className="mt-1.5 flex-1 text-xs leading-relaxed text-slate-400 sm:text-sm">{k.label}</div>
               <div className="mt-2">
@@ -84,7 +85,7 @@ export function Hero() {
         </div>
 
         <p className="mt-6 max-w-3xl text-xs leading-relaxed text-slate-500">
-          Projet académique : cette étude n'est pas une publication officielle d'EasyPark ou d'Arrive et n'utilise aucune donnée interne. Les chiffres viennent de sources publiques consultées le {asOf}.
+          Projet académique : ce dossier n'est pas une publication officielle d'EasyPark ou d'Arrive et n'utilise aucune donnée interne. Les chiffres viennent de sources publiques consultées jusqu'au {asOf}.
         </p>
       </div>
     </section>
@@ -93,7 +94,22 @@ export function Hero() {
 
 export function Synthese() {
   return (
-    <Section id="synthese" eyebrow="Synthèse pour la direction" title="Lancer SMART en assemblant ce que le groupe possède déjà" subtitle={synthese.lead}>
+    <Section id="synthese" eyebrow="Synthèse de l'étape 1" title="La moitié du parcours Smart Parking existe déjà ; son cœur manque" subtitle={synthese.lead}>
+      <div className="grid gap-4 md:grid-cols-2">
+        {synthese.quadrants.map((q, i) => (
+          <Reveal key={q.q} delay={i * 0.06}>
+            <Card className="h-full">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-cyan-glow/90">{q.q}</span>
+                <Proof code={q.proof} />
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-slate-200">{q.a}</p>
+              {q.note && <p className="mt-1.5 text-xs text-slate-500">{q.note}</p>}
+            </Card>
+          </Reveal>
+        ))}
+      </div>
+      <SubTitle>Cinq constats pour la suite</SubTitle>
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {synthese.constats.map((c, i) => (
           <Reveal key={c.title} delay={i * 0.06}>
@@ -107,35 +123,20 @@ export function Synthese() {
             </Card>
           </Reveal>
         ))}
-        <Reveal delay={0.3}>
-          <div className="h-full rounded-2xl border border-cyan-glow/25 bg-gradient-to-br from-cyan-glow/[0.08] via-indigo-glow/[0.06] to-mint-glow/[0.05] p-5 sm:p-6">
-            <div className="flex items-center gap-2 text-sm font-semibold text-white">
-              <Gavel className="h-4 w-4 text-cyan-glow" /> Décisions attendues avant l'étape 2
-            </div>
-            <ol className="mt-3 space-y-2.5">
-              {synthese.decisions.map((d, i) => (
-                <li key={d} className="flex gap-3 text-sm leading-relaxed text-slate-300">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white/10 text-[11px] font-semibold text-white">{i + 1}</span>
-                  {d}
-                </li>
-              ))}
-            </ol>
-          </div>
-        </Reveal>
       </div>
     </Section>
   )
 }
 
-export function Cadre() {
+export function Methode() {
   return (
     <Section
-      id="cadre"
-      eyebrow="Cadre de l'étude"
-      title="Une étude en 12 étapes, chaque chiffre avec sa preuve"
-      subtitle="Point de vue de la direction d'EasyPark, marché français. L'étude repart de zéro, sans reprendre les conclusions des travaux précédents."
+      id="methode"
+      eyebrow="Objectif et méthode"
+      title="Établir la situation actuelle avant tout pivot"
+      subtitle="Le dossier est écrit du point de vue des équipes d'EasyPark et repart de zéro. Une fonctionnalité n'est dite absente que si les pages officielles d'EasyPark France ont été consultées sans la trouver ; un test sur téléphone reste à faire."
     >
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {proofLegend.map((p) => (
           <Card key={p.code} className="flex gap-4">
             <Proof code={p.code} className="h-7 min-w-7 text-xs" />
@@ -147,51 +148,9 @@ export function Cadre() {
         ))}
       </div>
 
-      <h3 className="mb-4 mt-12 font-display text-xl font-semibold text-white">Données de travail fournies</h3>
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
-        {donneesTravail.map((d) => (
-          <Card key={d.label} className="p-4 sm:p-5">
-            <div className="text-[11px] font-medium uppercase tracking-wider text-slate-500">{d.label}</div>
-            <div className="mt-2 font-display text-2xl font-semibold text-white">{d.value}</div>
-            <div className="mt-1 text-xs leading-relaxed text-slate-400">{d.note}</div>
-          </Card>
-        ))}
-      </div>
-      <div className="mt-4 flex gap-3 rounded-2xl border border-amber-300/20 bg-amber-300/[0.05] p-4 text-sm leading-relaxed text-slate-300">
-        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-200" />
-        <p>
-          Ces moyens sont très inférieurs à ceux d'un groupe présent dans des milliers de villes. L'équipe les traite comme les moyens alloués au projet SMART pour une phase pilote. Ce point est à confirmer : il conditionne les étapes 9 et 10.
-        </p>
-      </div>
-
-      <h3 className="mb-4 mt-12 font-display text-xl font-semibold text-white">Hypothèses de départ à valider</h3>
-      <div className="grid gap-4 md:grid-cols-3">
-        {hypothesesDepart.map((h) => (
-          <Card key={h.axe}>
-            <div className="font-semibold text-white">{h.axe}</div>
-            <p className="mt-2 text-sm leading-relaxed text-slate-400">{h.text}</p>
-            <div className="chip mt-3">{h.status}</div>
-          </Card>
-        ))}
-      </div>
-
-      <h3 className="mb-4 mt-12 font-display text-xl font-semibold text-white">Smart Parking : comment la réservation fonctionne</h3>
-      <div className="grid gap-3 md:grid-cols-3">
-        {reservationFlow.map((s, i) => (
-          <Reveal key={s.n} delay={i * 0.08}>
-            <div className="relative h-full rounded-2xl border border-cyan-glow/20 bg-cyan-glow/[0.04] p-5">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-gradient font-display font-bold text-ink-900">{s.n}</span>
-              <div className="mt-3 font-semibold text-white">{s.title}</div>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{s.text}</p>
-              {i < reservationFlow.length - 1 && <ArrowRight className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-cyan-glow/60 md:block" />}
-            </div>
-          </Reveal>
-        ))}
-      </div>
-
-      <h3 className="mb-4 mt-12 font-display text-xl font-semibold text-white">Plan de l'étude</h3>
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-        {etapes.map((e) => {
+      <SubTitle>Plan de la mission</SubTitle>
+      <div className="grid gap-2 sm:grid-cols-2">
+        {parties.map((e) => {
           const done = e.status === 'Livrée'
           return (
             <div key={e.n} className={`flex items-center gap-3 rounded-xl border px-4 py-3 ${done ? 'border-mint-glow/30 bg-mint-glow/[0.06]' : 'border-white/[0.06] bg-white/[0.02]'}`}>

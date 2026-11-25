@@ -1,9 +1,10 @@
 import SmartSidebar from './SmartSidebar'
-import { Hero, Synthese, Cadre } from './sections/Overview'
-import { Profil, Ressources } from './sections/Interne'
-import { Pestel, Porter } from './sections/Externe'
-import { Swot, Axes, Donnees, Sources } from './sections/Conclusions'
-import { asOf } from '../data/smart'
+import { Hero, Synthese, Methode } from './sections/Overview'
+import { Entreprise, Modele, Partenaires } from './sections/Entreprise'
+import { Audit, UX, Technique } from './sections/Application'
+import { Marche, Pestel } from './sections/Externe'
+import { Swot, Ecologie, Ecarts, Manques, Sources } from './sections/Conclusions'
+import { asOf } from '../data/dossier'
 
 export default function SmartApp() {
   return (
@@ -13,17 +14,22 @@ export default function SmartApp() {
         <div className="mx-auto max-w-7xl overflow-x-clip px-4 sm:px-8 lg:px-12">
           <Hero />
           <Synthese />
-          <Cadre />
-          <Profil />
-          <Ressources />
+          <Methode />
+          <Entreprise />
+          <Modele />
+          <Partenaires />
+          <Audit />
+          <UX />
+          <Technique />
+          <Marche />
           <Pestel />
-          <Porter />
           <Swot />
-          <Axes />
-          <Donnees />
+          <Ecologie />
+          <Ecarts />
+          <Manques />
           <Sources />
           <footer className="space-y-2 border-t border-white/[0.06] py-8 text-center text-sm text-slate-500">
-            <p>Projet SMART — Étude stratégique pour EasyPark · Étape 1 : diagnostic · Mise à jour le {asOf}</p>
+            <p>EasyPark — Smart Parking et Smart Sharing · Dossier stratégique · Étape 1 : diagnostic · Mise à jour le {asOf}</p>
             <p className="text-xs">
               Projet académique, non officiel : il n'engage ni EasyPark ni Arrive et n'utilise aucune donnée interne. ·{' '}
               <a href="?version=pitch-v1" className="underline decoration-white/20 underline-offset-2 hover:text-cyan-glow">

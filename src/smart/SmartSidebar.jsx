@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X, Archive } from 'lucide-react'
-import { nav, asOf } from '../data/smart'
+import { nav, asOf } from '../data/dossier'
 
 const links = nav.filter((n) => n.id)
 
@@ -72,10 +72,10 @@ export default function SmartSidebar() {
 
   const Brand = (
     <a href="#accueil" className="flex items-center gap-2.5">
-      <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand-gradient font-display text-lg font-bold text-ink-900 shadow-glow">S</span>
+      <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand-gradient font-display text-lg font-bold text-ink-900 shadow-glow">E</span>
       <span className="leading-tight">
-        <span className="block font-display text-[15px] font-semibold text-white">Projet SMART</span>
-        <span className="block text-[11px] text-slate-500">Étude stratégique · {asOf}</span>
+        <span className="block font-display text-[15px] font-semibold text-white">EasyPark · Pivot</span>
+        <span className="block text-[11px] text-slate-500">Dossier stratégique · {asOf}</span>
       </span>
     </a>
   )
