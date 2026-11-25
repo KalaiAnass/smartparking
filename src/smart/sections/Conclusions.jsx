@@ -1,6 +1,6 @@
 import { ExternalLink, Square } from 'lucide-react'
 import { Bar, BarChart, Cell, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import { vrio, swot, ges, gesNonCouvert, impactAxes, ecarts, ameliorations, informations, aValider, sources, asOf, S } from '../../data/dossier'
+import { vrio, swot, ges, gesNonCouvert, impactAxes, ecarts, ameliorations, informations, aValider, sources, sourcesEtape2, asOf, S } from '../../data/dossier'
 import { Section, Card, Reveal, ChartTooltip, fmtNum } from '../../components/ui/primitives'
 import { Proof, SrcLink, TableWrap, Th, Td, VrioDot, State, SubTitle, Note } from '../ui'
 
@@ -276,7 +276,7 @@ export function Sources() {
   return (
     <Section id="sources" eyebrow="Sources" title="Pages consultées" subtitle={`Toutes les sources ont été ouvertes et vérifiées entre le 23 et le ${asOf}.`}>
       <div className="grid gap-8 lg:grid-cols-2">
-        {sources.map((g) => (
+        {[...sources, sourcesEtape2].map((g) => (
           <div key={g.group}>
             <div className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">{g.group}</div>
             <ul className="space-y-2">

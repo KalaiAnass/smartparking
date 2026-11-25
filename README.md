@@ -1,7 +1,7 @@
 # EasyPark — Smart Parking et Smart Sharing
 
 Site du dossier stratégique EasyPark : Smart Parking (réservation automatique et premium) et Smart Sharing (location de places).
-Version actuelle : étape 1 sur 10, le diagnostic d'EasyPark et l'audit de son application en France.
+Version actuelle : étapes 1 et 2 sur 10 (diagnostic et audit de l'application ; marché, benchmark et mappings V1/V2), avec la correspondance aux consignes du cours et les règles du prévisionnel.
 
 Projet académique, non officiel : il n'engage ni EasyPark ni Arrive et n'utilise aucune donnée interne.
 

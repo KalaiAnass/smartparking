@@ -49,24 +49,31 @@ export const S = {
 
 export const nav = [
   { id: 'accueil', label: 'Accueil' },
+  { id: 'methode', label: 'Méthode et consignes' },
+  { group: 'Étape 1 · Diagnostic' },
   { id: 'synthese', label: "Synthèse de l'étape 1" },
-  { id: 'methode', label: 'Objectif et méthode' },
-  { group: 'EasyPark aujourd’hui' },
   { id: 'entreprise', label: '1.1 Entreprise et positionnement' },
   { id: 'modele', label: '1.2 Modèle économique' },
   { id: 'partenaires', label: '1.6 Écosystème de partenaires' },
-  { group: "Audit de l'application" },
   { id: 'audit', label: '1.3 Fonctionnalités en France' },
   { id: 'ux', label: '1.4 Expérience utilisateur' },
   { id: 'technique', label: '1.5 Diagnostic technique' },
-  { group: 'Environnement' },
   { id: 'marche', label: '1.7 Marché français' },
   { id: 'pestel', label: '1.8 PESTEL' },
-  { group: 'Conclusions' },
   { id: 'swot', label: '1.9 Diagnostic interne et SWOT' },
   { id: 'ecologie', label: '1.10 Impact écologique' },
   { id: 'ecarts', label: '1.11 Existe, manque, à améliorer' },
   { id: 'manques', label: 'Informations à obtenir' },
+  { group: 'Étape 2 · Marché et benchmark' },
+  { id: 'e2-synthese', label: "Synthèse de l'étape 2" },
+  { id: 'tendances', label: '2.1 Tendances du marché' },
+  { id: 'concurrents', label: '2.2 et 2.3 Concurrents' },
+  { id: 'bench-parking', label: '2.4 Benchmark Smart Parking' },
+  { id: 'bench-sharing', label: '2.5 Benchmark Smart Sharing' },
+  { id: 'mappings', label: '2.6 et 2.7 Mappings V1 et V2' },
+  { id: 'positionnement', label: '2.8 Positionnement' },
+  { id: 'e2-manques', label: 'Informations à obtenir' },
+  { group: 'Références' },
   { id: 'sources', label: 'Sources' },
 ]
 
@@ -130,7 +137,7 @@ export const proofLegend = [
 
 export const parties = [
   { n: 1, label: "Diagnostic d'EasyPark et audit de l'app en France", status: 'Livrée' },
-  { n: 2, label: 'Étude de marché et benchmark', status: 'À venir' },
+  { n: 2, label: 'Étude de marché et benchmark', status: 'Livrée' },
   { n: 3, label: 'Pivot et proposition de valeur', status: 'À venir' },
   { n: 4, label: 'Personas, ZMOT et Customer Journey', status: 'À venir' },
   { n: 5, label: 'Conception de la solution et POC', status: 'À venir' },
@@ -453,3 +460,216 @@ export const sources = [
     ['Yespark Group', S.yespark], ['YourParkingSpace', S.yps], ['Clubic, 27 janvier 2026', S.clubic],
   ] },
 ]
+
+// ---------------------------------------------------------------------------
+// Consignes du cours et règles du prévisionnel (notes de séance)
+// ---------------------------------------------------------------------------
+
+export const consignes = [
+  { bloc: '1. Diagnostic (audit V1)', livrables: "Diagnostic technique et impact écologique d'un site mobile ou d'une app", ou: 'Étape 1, sections 1.5 et 1.10', etat: 'partiel', note: "Fait pour l'app ; audit du site mobile à ajouter" },
+  { bloc: '1. Diagnostic (audit V1)', livrables: 'Benchmark, mapping concurrentiel V1', ou: 'Étape 2', etat: 'fait' },
+  { bloc: '1. Diagnostic (audit V1)', livrables: 'Customer Journey Canvas V1, ZMOT V1, USP V1', ou: 'Étapes 3 et 4', etat: 'afaire' },
+  { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'Customer Journey Canvas V2, ZMOT V2, USP V2', ou: 'Étapes 3 et 4', etat: 'afaire' },
+  { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'Mapping concurrentiel V2, benchmark', ou: 'Étape 2', etat: 'fait' },
+  { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'POC, Value Proposition Canvas, maquettes', ou: 'Étapes 3 et 5', etat: 'afaire' },
+  { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'Business model, Canvas refait avec la nouveauté', ou: 'Étape 6', etat: 'afaire' },
+  { bloc: '3. Communication digitale (acquisition)', livrables: 'Landing page et GEO ; canaux owned, puis earned, puis paid ; push et pull ; Gantt', ou: 'Étapes 7 et 9', etat: 'afaire' },
+  { bloc: '4. ROI et prévisions (15 mois)', livrables: 'Budgets, ROI et ROAS, CLV, seuil de rentabilité et point mort, 12 + 3 mois, coût du projet, marge', ou: 'Étape 8', etat: 'afaire' },
+]
+
+export const reglesPrevisionnel = [
+  { regle: 'Prévisionnel sur 15 mois : setup les mois 1 à 3, run à partir du mois 4', application: "Tableau mensuel M1 à M15, avec chiffre d'affaires et marge brute cumulée" },
+  { regle: "Acquisition organique au départ, paid des mois 7 à 15", application: "Le budget paid n'apparaît qu'à partir de M7" },
+  { regle: 'Frais de setup : développement, coûts fixes, coûts variables proportionnels à l’exploitation', application: 'Trois lignes de coûts distinctes' },
+  { regle: 'Run : charges internes, externes et paid', application: 'Trois lignes de charges distinctes' },
+  { regle: 'Amortir sur 3 à 5 ans ; aligner cette durée sur celle du prêt, s’il y en a un', application: "Durée d'amortissement choisie et justifiée" },
+  { regle: "On n'amortit pas une charge d'exploitation", application: 'Seuls le développement et le matériel (capteurs du premium) sont amortis' },
+  { regle: 'Seuil de rentabilité : la marge brute cumulée dépasse la somme des investissements', application: 'Mois de franchissement calculé dans chaque scénario' },
+]
+
+// ---------------------------------------------------------------------------
+// Étape 2 — Étude de marché et benchmark concurrentiel
+// ---------------------------------------------------------------------------
+
+export const S2 = {
+  indigo: 'https://www.group-indigo.com/en/solution/the-indigo-neo-solution/',
+  indigoApp: 'https://apps.apple.com/fr/app/id1109398417',
+  oneparkCcm: 'https://www.onepark.co/be-fr/support/266-onepark-comment-ca-marche',
+  oneparkFrais: 'https://www.onepark.co/be-fr/support/469-tout-savoir-sur-les-frais-de-service/466-pourquoi-onepark-applique-des-frais-de-service',
+  oneparkApp: 'https://apps.apple.com/fr/app/id1528537709',
+  zenparkApp: 'https://zenpark.com/application-mobile',
+  zenparkStore: 'https://apps.apple.com/fr/app/id757934388',
+  zenparkPartner: 'https://zenpark.com/partner',
+  yesparkHome: 'https://www.yespark.fr/',
+  yesparkPart: 'https://www.yespark.fr/partner/particuliers',
+  parclick: 'https://parclick.fr/',
+  bipandgo: 'https://www.bipandgo.com/actualites/comment-reserver-parking-app-bipandgo',
+  parkto: 'https://parkto.fr/pourquoi-parkto',
+  lpa: 'https://www.lpa.fr/wp-content/uploads/2021/05/C-PRESSE-27-05-202w.pdf',
+}
+
+export const e2Synthese = {
+  lead: "Réserver un parking, entrer par la plaque et louer une place privée existent déjà en France. Le pivot ne peut pas se vendre sur ces fonctions. Son vrai élément de différence, à prouver, est l'automatisation complète : la réservation se déclenche seule avant l'arrivée, dans l'app que des millions de conducteurs utilisent déjà en voirie.",
+  constats: [
+    { title: 'Indigo Neo, le concurrent de référence', text: 'Voirie, réservation et entrée par la plaque réunies ; 3 millions d’utilisateurs, 600 parkings. Il faut le battre sur l’automatisation et la couverture de plusieurs exploitants.', proof: 'V' },
+    { title: 'Personne ne réserve tout seul', text: "Aucun acteur étudié ne déclenche la réservation à partir de l'heure d'arrivée. Premier argument de différence, à confirmer par une recherche de brevets et chez les constructeurs.", proof: 'H' },
+    { title: 'Le premium se vend sur « ma place m’attend »', text: 'Le guidage à la place existe chez des exploitants (LPA, Lyon) ; la réservation d’une place numérotée dans une app grand public n’a pas été trouvée.', proof: 'E' },
+    { title: 'Sharing : viser la location courte', text: 'Yespark-Zenpark dominent le mois ; Parkto ne prend aucune commission aux propriétaires. Les 15 % devront se justifier par un service.', proof: 'E' },
+    { title: 'Pas de prix de référence pour le niveau 1', text: 'Aucun concurrent ne publie un abonnement payé par le parking : le tarif partenaire est à construire et à tester.', proof: 'H' },
+  ],
+}
+
+export const tendances2 = [
+  { title: 'Réservation de parkings', text: 'Onepark annonce 4 000 parkings en Europe ; Parclick plus de 3 000 dans 9 pays ; Bip&Go, l’app de télépéage, propose la réservation.', src: S2.oneparkApp },
+  { title: 'Lecture de plaques', text: 'Indigo Neo permet d’entrer et sortir sans ticket, facturé au temps réel ; Bip&Go demande la plaque pour toute réservation ; EasyPark a express pay.', src: S2.indigoApp },
+  { title: 'Accès automatisés', text: 'Le téléphone sert de télécommande chez Zenpark (boîtier Zenpass sinon) ; Bip&Go ouvre par un bouton dans l’app ou par code.', src: S2.zenparkApp },
+  { title: 'Stationnement intelligent', text: 'Guidage à la place par capteurs et voyants : LPA à Lyon a testé 10 places pendant 6 mois en 2020, puis déployé en 2021.', src: S2.lpa },
+  { title: 'Places de marché de places privées', text: 'Yespark et Zenpark gèrent la location pour les particuliers, payés au succès ; Parkto annonce 0 % de commission pour les propriétaires.', src: S2.yesparkPart },
+  { title: 'Digitalisation tout-en-un', text: 'Indigo Neo : 3 millions d’utilisateurs, 600 parkings connectés, 220 villes ; réservation, abonnement, voirie et pass journée dans la même app.', src: S2.indigo },
+]
+
+export const concurrents = [
+  { axe: 'Smart Parking, niveau 1', directs: 'Indigo Neo, Onepark, Zenpark (court terme), Parclick, Bip&Go', indirects: 'Sites et apps des exploitants ; PayByPhone en voirie ; se garer sans réserver' },
+  { axe: 'Smart Parking, niveau 2', directs: 'Aucun trouvé dans une app grand public', indirects: 'Guidage à la place installé par les exploitants (LPA à Lyon) ; panneaux de places libres' },
+  { axe: 'Smart Sharing', directs: 'Yespark et Zenpark (même groupe), Parkto', indirects: 'Petites annonces, agences immobilières, stationnement résidentiel en voirie' },
+]
+
+export const fiches = [
+  { name: 'Indigo Neo', what: 'Voirie, réservation à tarif avantageux, abonnements, pass journée, entrée et sortie sans ticket par la plaque', model: "App d'un exploitant : recettes de ses parkings", audience: '3 M d’utilisateurs, 600 parkings, 220 villes ; 4,4/5 (18 000 notes)', plus: 'Offre la plus complète', moins: 'Centrée sur le réseau Indigo (H)', src: S2.indigo },
+  { name: 'Onepark', what: "Réservation à l'heure, au jour, au mois ou à l'année dans des parkings partenaires ; n'exploite aucun parking", model: "Frais de service payés par l'usager, inclus dans le prix affiché", audience: '4 000 parkings, 5 M d’automobilistes ; 4,7/5 (8 200 notes) ; 30 M€ de CA en 2024', plus: 'Catalogue large, actionnaires industriels', moins: 'Accès variable selon le parking ; réservation manuelle', src: S2.oneparkCcm },
+  { name: 'Zenpark', what: "Réservation à l'heure, au jour, au mois ; le téléphone ouvre les portes ; disponibilité en temps réel", model: 'Places confiées par des propriétaires, payés au succès', audience: '1 M+ d’utilisateurs ; 4,7/5 (20 000 notes)', plus: 'Accès par smartphone sans équipement de l’exploitant', moins: "L'ouverture dépend du réseau mobile en sous-sol (E)", src: S2.zenparkApp },
+  { name: 'Yespark', what: 'Location au mois surtout (dès 40 €/mois), à l’heure (2 €) ; réservation jusqu’à 6 mois à l’avance', model: 'Gestion locative complète, rémunérée au succès ; taux non publié', audience: 'Groupe : 100 000 places, 900 villes ; 13 M d’usagers revendiqués', plus: 'Offre en volume de bailleurs et d’entreprises', moins: 'Peu adapté au besoin ponctuel à l’arrivée (E)', src: S2.yesparkHome },
+  { name: 'Parclick', what: 'Réservation de parkings, aéroports, ports et gares', model: 'Prix du parking plus frais ; montant non vérifié', audience: '3 000 parkings, 9 pays, 500 villes ; 3 M d’utilisateurs revendiqués', plus: 'Présence européenne', moins: 'Présence française non chiffrée', src: S2.parclick },
+  { name: 'Bip&Go', what: "Dans l'app de télépéage : réservation autour de la destination, plaque obligatoire, ouverture par l'app ou par code", model: 'Abonnements télépéage ; tarif du service parking non vérifié', audience: 'Non publiée', plus: 'Conducteurs déjà équipés, comme EasyPark', moins: 'Parcours en 7 étapes, manuel', src: S2.bipandgo },
+  { name: 'Parkto', what: 'Location entre particuliers à la journée ou au mois ; paiement sécurisé, contrat automatique, messagerie', model: '0 % de commission pour les propriétaires (annoncé)', audience: 'Non publiée', plus: 'Prix attractif pour les propriétaires', moins: 'Accès remis par le propriétaire lui-même', src: S2.parkto },
+]
+
+export const benchActeurs = ['EasyPark aujourd’hui', 'Indigo Neo', 'Onepark', 'Zenpark', 'Parclick', 'Bip&Go']
+
+export const benchParking = [
+  { f: 'Recherche autour d’une destination', v: ['Oui', 'Oui', 'Oui', 'Oui', 'Oui', 'Oui'] },
+  { f: 'Réservation à l’avance', v: ['Non vu', 'Oui', 'Oui', 'Oui', 'Oui', 'Oui'] },
+  { f: "Réservation déclenchée par l'heure d'arrivée", v: ['Non vu', 'Non vu', 'Non vu', 'Non vu', 'Non vu', 'Non vu'] },
+  { f: 'Disponibilité en temps réel affichée', v: ['Non vu', 'Non vu', 'Non vu', 'Oui', 'Non vu', 'Pour le créneau choisi'] },
+  { f: 'Entrée par lecture de plaque', v: ['Oui (express pay)', 'Oui', 'Non vu', 'Non vu', 'Non vu', 'Plaque obligatoire'] },
+  { f: 'Ouverture par le téléphone', v: ['Non vu', 'Non vu', 'Non vu', 'Oui', 'Non vu', 'Oui'] },
+  { f: 'Voirie dans la même app', v: ['Oui', 'Oui', 'Non vu', 'Non vu', 'Non vu', 'Non vu'] },
+  { f: 'Place précise et guidage intérieur', v: ['Non vu', 'Non vu', 'Non vu', 'Non vu', 'Non vu', 'Non vu'] },
+]
+
+export const parcoursConcurrents = [
+  { name: 'Bip&Go', steps: '7 étapes : connexion, rubrique Parking, calendrier, créneau, choix sur la carte, plaque, validation ; puis ouverture par l’app ou par code', proof: 'V', src: S2.bipandgo },
+  { name: 'Onepark', steps: 'Recherche, choix du parking et du créneau, paiement, puis accès selon les consignes du parking', proof: 'V', src: S2.oneparkCcm },
+  { name: 'Zenpark', steps: 'Heure de début et durée, réservation, ouverture des portes avec le téléphone', proof: 'V', src: S2.zenparkStore },
+  { name: 'Indigo Neo', steps: 'Réservation à l’avance ; avec le service plaque activé, entrée et sortie sans ticket', proof: 'V', src: S2.indigoApp },
+  { name: 'EasyPark niveau 1 (cible)', steps: 'Saisir sa destination et accepter la réservation automatique ; le reste se fait sans geste dans les parkings compatibles', proof: 'H', src: null },
+]
+
+export const modelesEco = [
+  { model: 'Exploitant intégré', payer: 'L’automobiliste paie le stationnement à l’exploitant', examples: 'Indigo Neo', reading: "EasyPark n'exploite pas de parkings : il ne peut pas copier ce modèle" },
+  { model: 'Frais de service usager', payer: 'L’automobiliste paie des frais en plus', examples: 'Onepark, Parclick', reading: 'Proche du modèle actuel d’EasyPark, mais contesté en voirie' },
+  { model: 'Abonnement payé par le partenaire', payer: 'Le parking paie pour être intégré', examples: 'Aucun concurrent ne le publie', reading: 'Modèle visé par le niveau 1, à tester (H)' },
+  { model: 'Supplément premium', payer: 'L’automobiliste paie un service en plus', examples: 'Niveau 2 à 1 €', reading: 'Aucun équivalent : pas de prix de référence (H)' },
+]
+
+export const sharingActeurs = ['Yespark', 'Zenpark', 'Parkto', 'Petites annonces', 'EasyPark (cible)']
+
+export const benchSharing = [
+  { f: 'Durées', v: ['Mois surtout ; heure (2 €)', 'Heure, jour, mois', 'Jour, mois', 'Mois en général (H)', 'Heure, jour, semaine, mois (H)'] },
+  { f: 'Qui propose des places', v: ['Bailleurs, entreprises, particuliers', 'Propriétaires, parkings partenaires', 'Particuliers', 'Particuliers', 'Particuliers, entreprises, hôtels, gestionnaires (H)'] },
+  { f: 'Service au propriétaire', v: ['Annonce, prix conseillé, envoi des accès, encaissement, relocation', 'Identique (même groupe)', 'Paiement sécurisé, contrat, messagerie', 'Aucun', 'À définir (étape 5)'] },
+  { f: 'Accès à la place', v: ['Accès envoyés par courrier, garantis', 'Téléphone, Zenpass, badge ou code', 'Remis par le propriétaire', 'Remis par le propriétaire', 'À définir : le point dur (E)'] },
+  { f: 'Rémunération', v: ['Au succès, taux non publié', 'Au succès, taux non publié', '0 % pour le propriétaire (annoncé)', 'Aucune', '15 % par transaction (H)'] },
+  { f: 'Délai pour louer', v: ['10 jours en moyenne (annoncé)', '10 jours en moyenne (annoncé)', 'Non publié', 'Non publié', 'À mesurer'] },
+]
+
+export const sharingLecons = [
+  { title: 'Le mois est pris, l’heure l’est moins', text: 'Les leaders vendent surtout de l’abonnement mensuel. La location courte, au moment où le conducteur cherche, est le terrain naturel d’une app de paiement à la minute.' },
+  { title: 'L’accès est le vrai problème', text: 'Une place privée exige une clé, un badge ou un code. Yespark l’envoie par courrier : cela convient au mois, pas à l’heure.' },
+  { title: 'La commission de 15 % est exposée', text: 'Elle est au-dessus du 0 % de Parkto ; les taux de Yespark et Zenpark ne sont pas publics.' },
+]
+
+// Mappings : scores = nombre de critères remplis, d'après les tableaux 2.4 et 2.5.
+export const mappingParking = {
+  title: "Smart Parking : le pivot place EasyPark devant Indigo Neo sur l'automatisation",
+  xLabel: 'Situations couvertes (0 à 4)',
+  yLabel: 'Automatisation du parcours (0 à 3)',
+  xMax: 4,
+  yMax: 3,
+  points: [
+    { name: 'Indigo Neo', x: 4, y: 2, kind: 'other', lx: -12, ly: 4, anchor: 'end' },
+    { name: 'Onepark', x: 2, y: 0, kind: 'other', lx: 12, ly: -10, anchor: 'start' },
+    { name: 'Zenpark', x: 2, y: 1, kind: 'other', lx: 12, ly: 4, anchor: 'start' },
+    { name: 'Parclick', x: 1, y: 0, kind: 'other', lx: 12, ly: -10, anchor: 'start' },
+    { name: 'PayByPhone (voirie)', x: 1, y: 0, kind: 'other', lx: 12, ly: 16, anchor: 'start' },
+    { name: 'Bip&Go', x: 1, y: 1, kind: 'other', lx: 12, ly: 4, anchor: 'start' },
+    { name: 'EasyPark aujourd’hui (V1)', x: 2, y: 2, kind: 'v1', lx: 12, ly: 22, anchor: 'start' },
+    { name: 'EasyPark après le pivot (V2)', x: 3, y: 3, kind: 'v2', lx: -12, ly: -10, anchor: 'end' },
+  ],
+  reading: "Situations : voirie, parking payé à la durée, réservation, abonnement. Automatisation : accès sans ticket ni code, sortie et paiement sans geste, réservation sans choix manuel. Indigo Neo couvre plus de situations ; le pivot place EasyPark devant sur l'automatisation.",
+}
+
+export const mappingSharing = {
+  title: 'Smart Sharing : plus de durées que Yespark, moins de services',
+  xLabel: 'Durées proposées (0 à 4)',
+  yLabel: 'Services au propriétaire (0 à 4)',
+  xMax: 4,
+  yMax: 4,
+  note: "EasyPark aujourd'hui (V1) : absent de ce marché, donc aucun point",
+  points: [
+    { name: 'Yespark', x: 3, y: 4, kind: 'other', lx: -12, ly: -8, anchor: 'end' },
+    { name: 'Zenpark (même groupe)', x: 3, y: 4, kind: 'other', lx: -12, ly: 16, anchor: 'end' },
+    { name: 'Parkto', x: 2, y: 2, kind: 'other', lx: 12, ly: 4, anchor: 'start' },
+    { name: 'Petites annonces', x: 1, y: 1, kind: 'other', lx: 12, ly: 4, anchor: 'start' },
+    { name: 'EasyPark après le pivot (V2)', x: 4, y: 2, kind: 'v2', lx: -12, ly: -12, anchor: 'end' },
+  ],
+  reading: "Durées : heure, jour, semaine, mois. Services : annonce et prix conseillé, encaissement et reversement, gestion des accès, relocation et relances. Si EasyPark gère aussi les accès, le point V2 monte d'un cran.",
+}
+
+export const differenciation = [
+  { el: 'Réservation à l’avance dans un parking', who: 'Indigo Neo, Onepark, Zenpark, Parclick, Bip&Go', diff: 'non' },
+  { el: 'Entrée et sortie par lecture de plaque', who: 'Indigo Neo ; EasyPark (express pay)', diff: 'non', note: 'Sauf couverture de plusieurs exploitants (H)' },
+  { el: 'Voirie et parkings dans une même app', who: 'Indigo Neo', diff: 'non' },
+  { el: 'Ouverture par téléphone', who: 'Zenpark, Bip&Go', diff: 'non' },
+  { el: 'Guidage vers une place libre par capteurs', who: 'Exploitants (LPA à Lyon)', diff: 'non' },
+  { el: 'Location de places entre particuliers', who: 'Yespark, Zenpark, Parkto', diff: 'non' },
+  { el: 'Location au mois', who: 'Yespark, Zenpark, Parkto', diff: 'non' },
+  { el: 'Réservation déclenchée seule à 15 min de l’arrivée', who: 'Non trouvé', diff: 'oui' },
+  { el: "Place numérotée réservée avec guidage, dans une app grand public", who: 'Non trouvé', diff: 'oui' },
+  { el: 'Places privées à l’heure dans la même recherche que voirie et parkings', who: 'Non trouvé dans une même app', diff: 'oui' },
+]
+
+export const positionnement = {
+  statement: "EasyPark s'occupe du stationnement avant même que le conducteur arrive. Il indique sa destination ; l'app trouve et réserve la place, ouvre la barrière et paie, que ce soit dans la rue, dans un parking partenaire ou sur une place privée.",
+  appui: "Ce positionnement s'appuie sur ce qu'EasyPark a déjà et que les spécialistes de la réservation n'ont pas : des millions de conducteurs inscrits avec leur plaque et leur moyen de paiement, et une présence en voirie dans plus de 350 villes.",
+  nePas: [
+    'Qu’EasyPark est « le seul » à réserver automatiquement : la recherche a porté sur les acteurs français grand public, pas sur les constructeurs ni les brevets.',
+    'Que la lecture de plaque est une innovation : Indigo Neo l’offre déjà.',
+    'Que le guidage à la place est nouveau : il existe dans des parkings français depuis au moins 2021.',
+  ],
+}
+
+export const e2Informations = [
+  { n: 1, info: 'Commissions de Onepark, Parclick, Yespark et Zenpark', why: "Situer l'abonnement partenaire et les 15 %", how: 'Entretiens avec 5 exploitants et 10 propriétaires ; conditions partenaires' },
+  { n: 2, info: "Ouverture d'Indigo Neo aux parkings d'autres exploitants", why: 'Savoir si son réseau est fermé', how: "Test de l'app et pages partenaires d'Indigo" },
+  { n: 3, info: "Réservation déclenchée par l'heure d'arrivée ailleurs", why: 'Confirmer le premier élément différenciant', how: 'Recherche de brevets (INPI, Espacenet) et navigation des constructeurs' },
+  { n: 4, info: 'Relevé de prix comparable', why: 'Comparer les prix réels', how: '10 parkings, même créneau, Paris et Lyon, sur chaque plateforme' },
+  { n: 5, info: 'Test des parcours concurrents', why: 'Mesurer gestes et temps', how: 'Réserver une fois chez Indigo Neo, Onepark, Zenpark et Bip&Go' },
+]
+
+export const e2AValider = [
+  "Le positionnement « EasyPark s'occupe du stationnement avant même que le conducteur arrive ».",
+  'Indigo Neo comme concurrent de référence pour Smart Parking, Yespark-Zenpark pour Smart Sharing.',
+  'Smart Sharing centré d’abord sur la location courte (heure, jour) plutôt que sur le mois.',
+]
+
+export const sourcesEtape2 = {
+  group: 'Étape 2 : concurrents',
+  items: [
+    ['Groupe Indigo, Indigo Neo', S2.indigo], ['Indigo Neo, App Store', S2.indigoApp], ['Onepark, comment ça marche', S2.oneparkCcm],
+    ['Onepark, frais de service', S2.oneparkFrais], ['Onepark, App Store', S2.oneparkApp], ['Zenpark, application', S2.zenparkApp],
+    ['Zenpark, App Store', S2.zenparkStore], ['Zenpark, propriétaires', S2.zenparkPartner], ['Yespark, accueil', S2.yesparkHome],
+    ['Yespark, particuliers', S2.yesparkPart], ['Parclick', S2.parclick], ['Bip&Go, 16 novembre 2026', S2.bipandgo], ['Parkto', S2.parkto],
+    ['LPA, guidage à la place, 27 mai 2021', S2.lpa],
+  ],
+}
