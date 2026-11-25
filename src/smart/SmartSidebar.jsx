@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X, Archive } from 'lucide-react'
-import { nav, asOf } from '../data/dossier'
+import { asOf } from '../data/dossier'
+import { etapesNav as nav } from '../data/etapes'
 
 const links = nav.filter((n) => n.id)
 
@@ -15,6 +16,8 @@ function useActiveSection() {
         const line = window.innerHeight * 0.3
         let current = links[0].id
         document.querySelectorAll('[data-section]').forEach((el) => {
+          // Ignore les sections masquées (annexe repliée) et celles hors du menu.
+          if (el.offsetParent === null || !links.some((l) => l.id === el.dataset.section)) return
           if (el.getBoundingClientRect().top <= line) current = el.dataset.section
         })
         setActive(current)

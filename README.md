@@ -1,7 +1,9 @@
 # EasyPark — Smart Parking et Smart Sharing
 
 Site du dossier stratégique EasyPark : Smart Parking (réservation automatique et premium) et Smart Sharing (location de places).
-Version actuelle : étapes 1 et 2 sur 10 (diagnostic et audit de l'application ; marché, benchmark et mappings V1/V2), avec la correspondance aux consignes du cours et les règles du prévisionnel.
+Version actuelle : les 10 étapes en version essentielle (le projet en 1 minute, diagnostic, marché, pivot, personas et parcours, solution et maquettes, Canvas, marketing, business plan 15 mois, gestion de projet, KPI), avec le détail des étapes 1 et 2 en annexe.
+
+Le business plan est calculé dans `src/data/businessPlan.js` (hypothèses en tête de fichier) ; le contenu des étapes est dans `src/data/etapes.js`.
 
 Projet académique, non officiel : il n'engage ni EasyPark ni Arrive et n'utilise aucune donnée interne.
 

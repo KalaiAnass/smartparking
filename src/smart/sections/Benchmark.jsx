@@ -248,7 +248,7 @@ export function BenchSharing() {
   )
 }
 
-function ScatterMap({ data }) {
+export function ScatterMap({ data }) {
   const X = (s) => 120 + (s * 560) / data.xMax
   const Y = (s) => 410 - (s * 300) / data.yMax
   const xt = Array.from({ length: data.xMax + 1 }, (_, i) => i)

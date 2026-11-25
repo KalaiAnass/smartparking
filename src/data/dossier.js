@@ -138,14 +138,14 @@ export const proofLegend = [
 export const parties = [
   { n: 1, label: "Diagnostic d'EasyPark et audit de l'app en France", status: 'Livrée' },
   { n: 2, label: 'Étude de marché et benchmark', status: 'Livrée' },
-  { n: 3, label: 'Pivot et proposition de valeur', status: 'À venir' },
-  { n: 4, label: 'Personas, ZMOT et Customer Journey', status: 'À venir' },
-  { n: 5, label: 'Conception de la solution et POC', status: 'À venir' },
-  { n: 6, label: 'Business Model Canvas', status: 'À venir' },
-  { n: 7, label: 'Stratégie commerciale et marketing (POEM)', status: 'À venir' },
-  { n: 8, label: 'Business plan 12 mois et projection 3 mois', status: 'À venir' },
-  { n: 9, label: 'Gestion de projet et déploiement', status: 'À venir' },
-  { n: 10, label: 'KPI et pilotage', status: 'À venir' },
+  { n: 3, label: 'Pivot et proposition de valeur', status: 'Livrée' },
+  { n: 4, label: 'Personas, ZMOT et Customer Journey', status: 'Livrée' },
+  { n: 5, label: 'Conception de la solution et POC', status: 'Livrée' },
+  { n: 6, label: 'Business Model Canvas', status: 'Livrée' },
+  { n: 7, label: 'Stratégie commerciale et marketing (POEM)', status: 'Livrée' },
+  { n: 8, label: 'Business plan 12 mois et projection 3 mois', status: 'Livrée' },
+  { n: 9, label: 'Gestion de projet et déploiement', status: 'Livrée' },
+  { n: 10, label: 'KPI et pilotage', status: 'Livrée' },
 ]
 
 export const identite = [
@@ -468,13 +468,13 @@ export const sources = [
 export const consignes = [
   { bloc: '1. Diagnostic (audit V1)', livrables: "Diagnostic technique et impact écologique d'un site mobile ou d'une app", ou: 'Étape 1, sections 1.5 et 1.10', etat: 'partiel', note: "Fait pour l'app ; audit du site mobile à ajouter" },
   { bloc: '1. Diagnostic (audit V1)', livrables: 'Benchmark, mapping concurrentiel V1', ou: 'Étape 2', etat: 'fait' },
-  { bloc: '1. Diagnostic (audit V1)', livrables: 'Customer Journey Canvas V1, ZMOT V1, USP V1', ou: 'Étapes 3 et 4', etat: 'afaire' },
-  { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'Customer Journey Canvas V2, ZMOT V2, USP V2', ou: 'Étapes 3 et 4', etat: 'afaire' },
+  { bloc: '1. Diagnostic (audit V1)', livrables: 'Customer Journey Canvas V1, ZMOT V1, USP V1', ou: 'Étapes 3 et 4', etat: 'fait' },
+  { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'Customer Journey Canvas V2, ZMOT V2, USP V2', ou: 'Étapes 3 et 4', etat: 'fait' },
   { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'Mapping concurrentiel V2, benchmark', ou: 'Étape 2', etat: 'fait' },
-  { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'POC, Value Proposition Canvas, maquettes', ou: 'Étapes 3 et 5', etat: 'afaire' },
-  { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'Business model, Canvas refait avec la nouveauté', ou: 'Étape 6', etat: 'afaire' },
-  { bloc: '3. Communication digitale (acquisition)', livrables: 'Landing page et GEO ; canaux owned, puis earned, puis paid ; push et pull ; Gantt', ou: 'Étapes 7 et 9', etat: 'afaire' },
-  { bloc: '4. ROI et prévisions (15 mois)', livrables: 'Budgets, ROI et ROAS, CLV, seuil de rentabilité et point mort, 12 + 3 mois, coût du projet, marge', ou: 'Étape 8', etat: 'afaire' },
+  { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'POC, Value Proposition Canvas, maquettes', ou: 'Étapes 3 et 5', etat: 'fait' },
+  { bloc: '2. Pitch et pivot (innovation V2)', livrables: 'Business model, Canvas refait avec la nouveauté', ou: 'Étape 6', etat: 'fait' },
+  { bloc: '3. Communication digitale (acquisition)', livrables: 'Landing page et GEO ; canaux owned, puis earned, puis paid ; push et pull ; Gantt', ou: 'Étapes 7 et 9', etat: 'fait' },
+  { bloc: '4. ROI et prévisions (15 mois)', livrables: 'Budgets, ROI et ROAS, CLV, seuil de rentabilité et point mort, 12 + 3 mois, coût du projet, marge', ou: 'Étape 8', etat: 'fait' },
 ]
 
 export const reglesPrevisionnel = [

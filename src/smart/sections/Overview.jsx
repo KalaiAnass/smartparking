@@ -29,7 +29,7 @@ export function Hero() {
       <Backdrop />
       <div className="relative z-10 max-w-5xl">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="chip mb-6 border-cyan-glow/30 text-cyan-glow">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-mint-glow" /> Dossier stratégique · étapes 1 et 2 sur 10 livrées
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-mint-glow" /> Dossier stratégique · les 10 étapes
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -43,14 +43,14 @@ export function Hero() {
           Faire évoluer l'offre et le modèle économique d'EasyPark, sans nouvelle app ni nouvelle marque
         </motion.p>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-400">
-          Étape 1 : diagnostic d'EasyPark et audit de son application en France. Étape 2 : marché, benchmark concurrentiel et mappings V1 et V2.
+          Deux nouveaux services dans l'app existante : la place réservée avant l'arrivée, et la location de places privées. Du diagnostic au business plan, en 10 étapes courtes.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55 }} className="mt-8 flex flex-wrap gap-3">
-          <a href="#synthese" className="group inline-flex items-center gap-2 rounded-full bg-brand-gradient px-6 py-3 font-semibold text-ink-900 shadow-glow transition hover:brightness-110">
-            Étape 1 : diagnostic <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+          <a href="#minute" className="group inline-flex items-center gap-2 rounded-full bg-brand-gradient px-6 py-3 font-semibold text-ink-900 shadow-glow transition hover:brightness-110">
+            Le projet en 1 minute <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
           </a>
-          <a href="#e2-synthese" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition hover:border-cyan-glow/40 hover:bg-white/10">
-            Étape 2 : benchmark
+          <a href="#etape-1" className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition hover:border-cyan-glow/40 hover:bg-white/10">
+            Les 10 étapes
           </a>
         </motion.div>
 
